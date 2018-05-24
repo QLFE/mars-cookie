@@ -1,0 +1,37 @@
+{
+  "name": "mars-cookie",
+  "version": "1.0.0",
+  "description": "cookie 封装",
+  "keywords": [
+    "cookie",
+    "mars"
+  ],
+  "main": "dist/cookie.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QLFE/mars-cookie"
+  },
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "webpack --progress --colors --mode=production",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ext .js,.vue src"
+  },
+  "author": "Wang Xiao <wanngxiao@gmail.com> (http://muyao.me)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-qlfe": "^0.1.6",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-import-resolver-webpack": "^0.10.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-vue": "^4.5.0",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.4"
+  }
+}
