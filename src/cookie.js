@@ -27,7 +27,7 @@ function isJson(str) {
 }
 
 export default {
-  set(key, value, options) {
+  set(key, value, options = {}) {
     if (type(key) === 'object') {
       Object.keys(key).forEach(element => {
         this.set(element, key[element], value);
@@ -88,7 +88,7 @@ export default {
   },
 
   get(key) {
-    const cookies = this.all();
+    const cookies = this.getAll();
     if (type(key) === 'array') {
       const result = {};
       const len = key.length;
@@ -103,7 +103,7 @@ export default {
     return cookies[key];
   },
 
-  all() {
+  getAll() {
     if (document.cookie === '') return null;
 
     const cookies = document.cookie.split('; ');
@@ -138,7 +138,7 @@ export default {
   },
 
   empty() {
-    const cookies = this.all();
+    const cookies = this.getAll();
 
     this.remove(Object.keys(cookies));
   },
