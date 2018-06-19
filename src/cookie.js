@@ -88,7 +88,8 @@ export default {
   },
 
   get(key) {
-    const cookies = this.getAll();
+    const cookies = this.getAll() || {};
+
     if (type(key) === 'array') {
       const result = {};
       const len = key.length;
@@ -138,7 +139,7 @@ export default {
   },
 
   empty() {
-    const cookies = this.getAll();
+    const cookies = this.getAll() || {};
 
     this.remove(Object.keys(cookies));
   },
