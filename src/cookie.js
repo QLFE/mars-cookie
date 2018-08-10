@@ -114,7 +114,7 @@ export default {
     for (let i = 0; i < len; i++) {
       const cookie = cookies[i].split('=');
       const key = decode(cookie.shift());
-      const value = cookie.join('=');
+      const value = decode(cookie.join('='));
 
       result[key] = isJson(value) ? JSON.parse(value) : value;
     }
